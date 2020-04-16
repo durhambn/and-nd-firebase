@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 //import com.bumptech.glide.Glide;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
@@ -33,9 +35,9 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
         if (isPhoto) {
             messageTextView.setVisibility(View.GONE);
             photoImageView.setVisibility(View.VISIBLE);
-//            Glide.with(photoImageView.getContext())
-//                    .load(message.getPhotoUrl())
-//                    .into(photoImageView);
+            Glide.with(photoImageView.getContext())
+                    .load(message.getPhotoUrl())
+                    .into(photoImageView);
         } else {
             messageTextView.setVisibility(View.VISIBLE);
             photoImageView.setVisibility(View.GONE);
